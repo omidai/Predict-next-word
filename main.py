@@ -93,7 +93,7 @@ with tf.Session() as sess:
     sess.run(init)
     for i in range(iteration):
         last_batch = len(training_data) % batch_size
-        training_steps = (len(training_data) / batch_size) + 1
+        training_steps = (int)(len(training_data) / batch_size) + 1
         for step in range(training_steps):
             X_batch = training_data[(step * batch_size) :((step + 1) * batch_size)]
             Y_batch = label[(step * batch_size) :((step + 1) * batch_size)]
